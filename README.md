@@ -1,7 +1,5 @@
 # Data-Tunneling-through-HTTPS
 
-Data Tunneling through HTTPS:
-
 Three Ubuntu Machines are required to run the project.Set network settings to use Bridged Adapter with Promiscuous mode set to Allow All on all 3 machines.
 
 consider,
