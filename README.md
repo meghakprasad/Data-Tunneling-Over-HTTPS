@@ -62,6 +62,6 @@ nc -v localhost 8070
 
 Example: 
 
-curl --header "Content-Type: application/json"      --request POST      --data '{"name":"Bhoomika","email":"bhoomika@gmail.com"}'      http://localhost:8090/people
+curl --header "Content-Type: application/json"      --request POST      --data '{"name":"Jane","email":"jane@gmail.com"}'      http://localhost:8090/people
 
 11) The message recieved will be inserted to the database in Ubuntu3.
