@@ -1,4 +1,6 @@
-# Data-Tunneling-Over-HTTPS
+# Data Tunneling Over HTTPS
+
+# To Run The Project
 
 Three Ubuntu Machines are required to run the project.
 Set network settings to use Bridged Adapter with Promiscuous mode set to Allow All on all 3 machines.
@@ -26,15 +28,15 @@ Example:
 
 (IN UBUNTU1)
 
-nc -l localhost 8080
+	nc -l localhost 8080
 
-sudo ghostunnel server     --listen 0.0.0.0:443     --target localhost:8080    --key certi/server.key --cert certi/server.crt     --cacert certi/ca.pem     --allow-all
+	sudo ghostunnel server     --listen 0.0.0.0:443     --target localhost:8080    --key certi/server.key --cert certi/server.crt     --cacert certi/ca.pem     --allow-all
 
 (IN UBUNTU2)
 
-ghostunnel client     --listen localhost:8080     --target 192.168.29.224:443     --key certi/server.key     --cert certi/server.crt     --cacert certi/ca.pem
+	ghostunnel client     --listen localhost:8080     --target 192.168.29.224:443     --key certi/server.key     --cert certi/server.crt     --cacert certi/ca.pem
 
- nc -v localhost 8080
+	nc -v localhost 8080
 
 
 8) Start Ghostunnel between ubuntu3 and ubuntu2 on port8070 considering ubuntu3 as the server and ubuntu2 as the client.
@@ -43,16 +45,16 @@ Example:
 
 (IN UBUNTU3)
 
-nc -l localhost 8070
+	nc -l localhost 8070
 
-sudo ghostunnel server     --listen 0.0.0.0:443     --target localhost:8070    --key cert/server.key --cert cert/server.crt     --cacert cert/ca.pem     --allow-all
+	sudo ghostunnel server     --listen 0.0.0.0:443     --target localhost:8070    --key cert/server.key --cert cert/server.crt     --cacert cert/ca.pem     --allow-all
 
 
 (IN UBUNTU2)
 
-ghostunnel client     --listen localhost:8070     --target 192.168.29.137:443     --key cert/server.key     --cert cert/server.crt     --cacert cert/ca.pem
+	ghostunnel client     --listen localhost:8070     --target 192.168.29.137:443     --key cert/server.key     --cert cert/server.crt     --cacert cert/ca.pem
 
-nc -v localhost 8070
+	nc -v localhost 8070
 
 
 9) once the connection is estblished and the machines are able to communicate Start app1 in ubuntu1 and start app2 in ubuntu2.
@@ -61,6 +63,6 @@ nc -v localhost 8070
 
 Example: 
 
-curl --header "Content-Type: application/json"      --request POST      --data '{"name":"Jane","email":"jane@gmail.com"}'       http://localhost:8090/people
+	curl --header "Content-Type: application/json"      --request POST      --data '{"name":"Jane","email":"jane@gmail.com"}'       http://localhost:8090/people
 
 11) The message recieved will be inserted to the database in Ubuntu3.
