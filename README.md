@@ -1,5 +1,19 @@
 # Data Tunneling Over HTTPS
 
+Data tunneling over HTTPS refers to the process of encapsulating one type of data within the HTTPS protocol for secure transmission over a network. HTTPS, or Hypertext Transfer Protocol Secure, is a protocol that ensures secure communication between a client (such as a web browser) and a server over the internet. It uses encryption to protect data integrity and confidentiality.
+
+Data tunneling involves embedding data from one protocol or application within the HTTPS protocol to leverage its security features. This approach is commonly used when the underlying network or infrastructure does not directly support the desired protocol, or when additional security measures are required.
+
+For example, let's say you have a non-secure protocol (Protocol A) that you want to transmit over a network that only allows HTTPS traffic. You can establish an HTTPS connection between the client and server, and then encapsulate the Protocol A data within the HTTPS packets. This way, the data is protected by the security mechanisms provided by HTTPS, such as encryption and server authentication.
+
+Data tunneling over HTTPS is often used in scenarios like:
+
+1. VPN (Virtual Private Network): VPN services often use HTTPS as a means of tunneling data securely over the internet, ensuring privacy and encryption for the transmitted data.
+2. Secure proxying: In some cases, data is tunneled over HTTPS to bypass firewalls or network restrictions by making the traffic appear as regular HTTPS traffic.
+3. Legacy application integration: If you have a legacy application that communicates using an insecure protocol, you can tunnel the communication through HTTPS to add an extra layer of security.
+
+It's important to note that data tunneling over HTTPS does not modify the HTTPS protocol itself but leverages its existing infrastructure for secure data transmission.
+
 # To Run The Project
 
 Three Ubuntu Machines are required to run the project.
